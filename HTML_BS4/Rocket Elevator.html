@@ -1276,7 +1276,7 @@
 
 					<header class="text-center mb-60">
 						<h2>Contact Us</h2>
-						<p class="lead font-lato">Lorem ipsum dolor sit amet adipiscium elit</p>
+						<p class="lead font-lato">We answer in 24 bussiness hour</p>
 						<hr />
 					</header>
 
@@ -1341,36 +1341,49 @@
 									<div class="row">
 											<div class="col-md-4">
 												<label for="contact:name">Full Name *</label>
-												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:name">
+												<input id="name" required type="text" value="" class="form-control" name="contact[name][required]">
 											</div>
 											<div class="col-md-4">
 												<label for="contact:email">E-mail Address *</label>
-												<input required type="email" value="" class="form-control" name="contact[email][required]" id="contact:email">
+												<input id="email" required type="email" value="" class="form-control" name="contact[email][required]">
 											</div>
 											<div class="col-md-4">
 												<label for="contact:phone">Phone</label>
-												<input type="text" value="" class="form-control" name="contact[phone]" id="contact:phone">
+												<input id="phone" type="text" value="" class="form-control" name="contact[phone]">
 											</div>
 									</div>
 									<div class="row">
-											<div class="col-md-8">
-												<label for="contact:subject">Subject *</label>
-												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
-											</div>
-											<div class="col-md-4">
-												<label for="contact_department">Department</label>
-												<select class="form-control pointer" name="contact[department]">
-													<option value="">--- Select ---</option>
-													<option value="Marketing">Marketing</option>
-													<option value="Webdesign">Webdesign</option>
-													<option value="Architecture">Architecture</option>
-												</select>
-											</div>
+										<div class="col-md-4">
+											<label for="contact:name">Company Name *</label>
+											<input id="company_name" required type="text" value="" class="form-control" name="contact[name][required]">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:name">Project Name *</label>
+											<input id="project_name" required type="text" value="" class="form-control" name="contact[name][required]" >
+										</div>
+										
+											
+											
+									</div>
+									<div class="row">
+										<div class="col-md-8">
+											<label for="contact:subject">Project Description *</label>
+											<input id="project_description" required type="text" value="" class="form-control" name="contact[subject][required]">
+										</div>
+										<div class="col-md-4">
+											<label for="contact_department">Department</label>
+											<select id="department" class="form-control pointer" name="contact[department]">
+												<option value="">--- Select ---</option>
+												<option value="Marketing">Marketing</option>
+												<option value="Webdesign">Webdesign</option>
+												<option value="Architecture">Architecture</option>
+											</select>
+										</div>
 									</div>
 									<div class="row">
 											<div class="col-md-12">
 												<label for="contact:message">Message *</label>
-												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
+												<textarea id="message" required maxlength="10000" rows="8" class="form-control" name="contact[message]" ></textarea>
 											</div>
 									</div>
 									<div class="row">
@@ -1378,7 +1391,7 @@
 												<label for="contact:attachment">File Attachment</label>
 
 												<!-- custom file upload -->
-												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="contact:attachment" data-btn-text="Select a File" />
+												<input class="custom-file-upload" type="file" id="attachment" name="contact[attachment]" id="contact:attachment" data-btn-text="Select a File" />
 												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
 
 											</div>
@@ -1416,14 +1429,16 @@
 								h-550
 								h-600
 							-->
-							<div id="map2" class="h-400 grayscale"></div>
+							<div id="map2" class="h-400 grayscale">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11194.06354771489!2d-73.5671205!3d45.4594108!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x852cd133f4fe32e9!2sCodeBoxx!5e0!3m2!1sen!2sca!4v1632331189068!5m2!1sen!2sca" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+							</div>
 
 							<hr />
 
 							<p>
-								<span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> Street Name, City Name, Country</span>
-								<span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="tel:1800-555-1234">1800-555-1234</a></span>
-								<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:mail@yourdomain.com">mail@yourdomain.com</a></span>
+								<span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> 4468 Wellington St Suite 204, Verdun, Quebec H4G 1W5</span>
+								<span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="tel:418-555-1234">(418) 555-1234</a></span>
+								<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a></span>
 							</p>
 
 						</div>
@@ -1452,9 +1467,9 @@
 
 							<!-- Small Description -->
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur imperdiet hendrerit volutpat. Sed in nunc nec ligula consectetur mollis in vel justo. Vestibulum ante ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur imperdiet hendrerit volutpat.
+								We have the conviction that we create the most innovative and reliable products on the market. Contact us today for any questions you might have.
 							</p>
-							<h2>(800) 123-4567</h2>
+							<h2>(418) 555-1234</h2>
 						</div>
 						<!-- /col #1 -->
 
