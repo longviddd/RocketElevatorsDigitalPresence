@@ -201,52 +201,57 @@
 
             <form>
                 <div class="form-group">
-                    <label for="building-type">Building Type: </label>
-                    <select id="building-type" class="form-control" onchange = "myFunction()">
+                    <label for="building-type">Building Type * </label>
+                    <select id="building-type" class="form-control" onchange = "selectChanged()">
+                        <option>Select</option>
                         <option id="residential" value="residential">Residential</option>
                         <option id="commercial" value="commercial">Commercial</option>
                         <option id="corporate" value="corporate">Corporate</option>
                         <option id="hybrid" value="hybrid">Hybrid</option>
                     </select>
                 </div>
-                <div class="form-group" id="number-of-floors" hidden>
+                <div class="form-group input" id="number-of-floors" hidden>
                     <label>Number of floors *</label>
-                    <input class="form-control" type="number" name="number-of-floors">
+                    <input class="form-control" type="number" name="number-of-floors" onchange="calculateElevators()">
                 </div>
-                <div class="form-group" id="number-of-basements" hidden>
+                <div class="form-group input"  id="number-of-basements" hidden>
                     <label>Number of basements *</label>
-                    <input class="form-control" type="number" name="number-of-basements">
+                    <input class="form-control" type="number" name="number-of-basements" onchange="calculateElevators()">
                 </div>
-                <div class="form-group" id="number-of-parking-spots" hidden>
+                <div class="form-group input"  id="number-of-parking-spots" hidden>
                     <label>Number of parking spots *</label>
-                    <input class="form-control" type="number" name="number-of-parking-spots">
+                    <input class="form-control" type="number" name="number-of-parking-spots" onchange="calculateElevators()">
                 </div>
-                <div class="form-group" id="maximum-occupancy" hidden>
-                    <label>Maximum occupancy * *</label>
-                    <input class="form-control" type="number" name="maximum-occupancy">
+                <div class="form-group input"  id="maximum-occupancy" hidden>
+                    <label>Maximum occupancy *</label>
+                    <input class="form-control" type="number" name="maximum-occupancy" onchange="calculateElevators()">
                 </div>
-                <div class="form-group" id="number-of-apartments" hidden>
+                <div class="form-group input"  id="number-of-apartments" hidden>
                     <label>Number of apartments *</label>
-                    <input class="form-control" type="number" name="number-of-apartments">
+                    <input class="form-control" type="number" name="number-of-apartments" onchange="calculateElevators()">
                 </div>
-                <div class="form-group" id="number-of-companies" hidden>
+                <div class="form-group input" id="number-of-companies" hidden>
                     <label>Number of companies *</label>
-                    <input class="form-control" type="number" name="number-of-companies">
+                    <input class="form-control" type="number" name="number-of-companies" onchange="calculateElevators()">
                 </div>
-                <div class="form-group" id="number-of-elevators" hidden>
+                <div class="form-group input" id="number-of-elevators" hidden>
                     <label>Number of elevators *</label>
-                    <input class="form-control" type="number" name="number-of-elevators">
+                    <input class="form-control" type="number" name="number-of-elevators" oninput="calculateElevators()">
                 </div>
-                <div class="form-group" id="number-of-corporations" hidden>
+                <div class="form-group input"  id="number-of-corporations" hidden>
                     <label>Number of corporations *</label>
-                    <input class="form-control" type="number" name="number-of-corporations">
+                    <input class="form-control" type="number" name="number-of-corporations" onchange="calculateElevators()">
                 </div>
-                <div class="form-group" id="business-hours" hidden>
+                <div class="form-group input"  id="business-hours" hidden>
                     <label>Business hours *</label>
-                    <input class="form-control" type="text" name="business-hours">
+                    <input class="form-control" type="number" max = "24" min = "0" name="business-hours" oninput="calculateElevators()">
                 </div>
                     
                 </div>
+                <div id="elevator-amount" class="form-group">
+                    <label>Number of elevators: </label>
+                    <input name="elevator-amount" class="form-control" readonly>
+                </div>>
             </form>
             <hr class="m-0" />
 
@@ -373,6 +378,6 @@
 			});
 
         </script>
-        <script src="assets/js/contact.js"></script>
+        <script type="text/javascript" src="assets/js/quote.js"></script>
 	</body>
 </html>
