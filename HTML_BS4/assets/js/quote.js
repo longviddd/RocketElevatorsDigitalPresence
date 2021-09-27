@@ -46,5 +46,31 @@ function calculateElevators(){
     if(selection == "commercial" && document.getElementsByName("number-of-elevators")[0].length != 0){
         document.getElementsByName("elevator-amount")[0].value = document.getElementsByName("number-of-elevators")[0].value
     }
+    else if(selection == "residential" && document.getElementsByName("number-of-apartments")[0].length != 0 && document.getElementsByName("number-of-floors")[0].length != 0){
+        var numberOfColumns = Math.ceil(parseInt(document.getElementsByName("number-of-floors")[0].value) / 20)
+        console.log("number of columns " + numberOfColumns )
+        var averageDoorsPerFloors = (parseInt(document.getElementsByName("number-of-apartments")[0].value) / parseInt(document.getElementsByName("number-of-floors")[0].value))
+        console.log("average doors per floor " + averageDoorsPerFloors )
+        var numberOfShaftsPerColumn = Math.ceil(averageDoorsPerFloors / 6)
+        console.log("shafts per column  " + numberOfShaftsPerColumn )
+        var totalShafts = numberOfShaftsPerColumn * numberOfColumns
+        console.log("total shaftS" + totalShafts)
+        document.getElementsByName("elevator-amount")[0].value = totalShafts
+    }
+    else if (selection == "corporate" || selection == "hybrid"){
+        if(document.getElementsByName("number-of-floors")[0].length != 0 && document.getElementsByName("number-of-basements")[0].length != 0 && document.getElementsByName("maximum-occupancy")[0].length != 0 ) {
+            var totalOccupants = (parseInt(document.getElementsByName("number-of-floors")[0].value) + parseInt(document.getElementsByName("number-of-basements")[0].value )) * document.getElementsByName("maximum-occupancy")[0].value // 32* 51 = 1632
+            console.log("occupancy total " + totalOccupants )
+            var totalElevators = totalOccupants / 1000 // 1632/1000 = 2
+            console.log("Total elevators " + totalElevators)
+            var numberOfColumn = Math.ceil((parseInt(document.getElementsByName("number-of-floors")[0].value) + parseInt(document.getElementsByName("number-of-basements")[0].value)) / 20) //2
+            console.log("number of columns" + numberOfColumn)
+            var elevatorsPerColumn = Math.ceil(totalElevators/numberOfColumn)//1
+            console.log("elevator per column" + elevatorsPerColumn)
+            var totalShaft = elevatorsPerColumn * numberOfColumn
+            console.log("total Shaft" + totalShaft)
+            document.getElementsByName("elevator-amount")[0].value = totalShaft
+        }
+    }
     
 }
