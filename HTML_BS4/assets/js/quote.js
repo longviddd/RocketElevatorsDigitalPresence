@@ -1,9 +1,10 @@
-
+var elevatorAmountCalculated = false
 function isEmpty(str) {
     return !str.trim().length;
 }
 var selection
 function selectChanged(){
+    elevatorAmountCalculated = false
     var inputClasses = document.getElementsByClassName('input')
     inputClasses.hidden = true
     document.getElementsByName("elevator-amount")[0].value = 0
@@ -42,9 +43,16 @@ function selectChanged(){
     }
 }
 function calculateElevators(){
+    if(document.getElementsByName("elevator-amount")[0].value != 0){
+        elevatorAmountCalculated = true
+    }
+    else{
+        elevatorAmountCalculated = false
+    }
     selection = document.getElementById('building-type').value
     if(selection == "commercial" && document.getElementsByName("number-of-elevators")[0].length != 0){
         document.getElementsByName("elevator-amount")[0].value = document.getElementsByName("number-of-elevators")[0].value
+        elevatorAmountCalculated = true
     }
     else if(selection == "residential" && document.getElementsByName("number-of-apartments")[0].length != 0 && document.getElementsByName("number-of-floors")[0].length != 0){
         var numberOfColumns = Math.ceil(parseInt(document.getElementsByName("number-of-floors")[0].value) / 20)
@@ -56,6 +64,7 @@ function calculateElevators(){
         var totalShafts = numberOfShaftsPerColumn * numberOfColumns
         console.log("total shaftS" + totalShafts)
         document.getElementsByName("elevator-amount")[0].value = totalShafts
+        elevatorAmountCalculated = true
     }
     else if (selection == "corporate" || selection == "hybrid"){
         if(document.getElementsByName("number-of-floors")[0].length != 0 && document.getElementsByName("number-of-basements")[0].length != 0 && document.getElementsByName("maximum-occupancy")[0].length != 0 ) {
@@ -70,7 +79,15 @@ function calculateElevators(){
             var totalShaft = elevatorsPerColumn * numberOfColumn
             console.log("total Shaft" + totalShaft)
             document.getElementsByName("elevator-amount")[0].value = totalShaft
+            elevatorAmountCalculated = true
         }
     }
+    if(elevatorAmountCalculated == true && document.getElementsByName("elevator-amount")[0].value != 0){
+        calculatePrices()
+    }
     
+}
+function calculatePrices(){
+    document.getElementById("price-calculation").removeAttribute("hidden")
+
 }

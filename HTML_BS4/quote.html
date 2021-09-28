@@ -252,6 +252,25 @@
                     <label>Number of elevators: </label>
                     <input name="elevator-amount" class="form-control" readonly>
                 </div>
+                
+                <div id="price-calculation" hidden>
+                    <div id="radio" class="form-check">
+                        <label class="form-check-label">Please select your range of elevator:</label>
+                        <input class="form-check-input" type="radio" id="standard" name="elevator-quality" value="standard">
+                        <label class="form-check-label" for="standard">Standard</label><br>
+                        <input class="form-check-input" type="radio" id="premium" name="elevator-quality" value="premium">
+                        <label class="form-check-label" for="premium">Premium</label><br>
+                        <input class="form-check-input" type="radio" id="excelium" name="elevator-quality" value="excelium">
+                        <label class="form-check-label" for="excelium">Excelium</label>
+                    </div>
+                    <div id="elevator-unit-price" class="form-group">
+                        <label>Price of each unit: </label>
+                        <input name="elevator-unit-price" class="form-control" readonly>
+                    </div>
+                </div>
+                
+                
+
             </form>
             <hr class="m-0" />
 
