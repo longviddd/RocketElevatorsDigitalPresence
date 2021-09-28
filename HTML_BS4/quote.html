@@ -136,7 +136,7 @@
 
 						<!-- Logo -->
 						<a class="logo float-left scrollTo" href="#top">
-							<img src="assets/images/_smarty/logo_dark.png" alt="" />
+							<img src="assets/images/R2.png" alt="" />
 						</a>
 
 						<!-- 
@@ -256,17 +256,30 @@
                 <div id="price-calculation" hidden>
                     <div id="radio" class="form-check">
                         <label class="form-check-label">Please select your range of elevator:</label>
-                        <input class="form-check-input" type="radio" id="standard" name="elevator-quality" value="standard">
+                        <input class="form-check-input" type="radio" id="standard" name="elevator-quality" value="standard" onchange="radioButtonClicked(this)">
                         <label class="form-check-label" for="standard">Standard</label><br>
-                        <input class="form-check-input" type="radio" id="premium" name="elevator-quality" value="premium">
+                        <input class="form-check-input" type="radio" id="premium" name="elevator-quality" value="premium" onchange="radioButtonClicked(this)">
                         <label class="form-check-label" for="premium">Premium</label><br>
-                        <input class="form-check-input" type="radio" id="excelium" name="elevator-quality" value="excelium">
+                        <input class="form-check-input" type="radio" id="excelium" name="elevator-quality" value="excelium" onchange="radioButtonClicked(this)">
                         <label class="form-check-label" for="excelium">Excelium</label>
                     </div>
                     <div id="elevator-unit-price" class="form-group">
                         <label>Price of each unit: </label>
                         <input name="elevator-unit-price" class="form-control" readonly>
                     </div>
+                    <div id="elevator-total-price" class="form-group">
+                        <label>Price of all elevators: </label>
+                        <input name="elevator-total-price" class="form-control" readonly>
+                    </div>
+                    <div id="installation-fees" class="form-group">
+                        <label>Installation fees: </label>
+                        <input name="installation-fees" class="form-control" readonly>
+                    </div>
+                    <div id="final-price" class="form-group">
+                        <label>Final Price: </label>
+                        <input name="final-price" class="form-control" readonly>
+                    </div>
+                    
                 </div>
                 
                 
